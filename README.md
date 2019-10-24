@@ -7,7 +7,7 @@ A collection of convenience functions to make sparse bits of development and tes
 
 Building is fairly straightforward:
 ```bash
-#!/bin/sh
+#!/bin/bash
 
 if [ ! -d build ]; then
     mkdir build
