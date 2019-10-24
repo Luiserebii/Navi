@@ -1,10 +1,7 @@
 #include <string>
 #include <sstream>
 #include <cstdlib>
-
-using std::string;
-using std::stringstream;
-using std::rand;
+#include <iostream>
 
 namespace Navi {
 
@@ -47,7 +44,7 @@ Out fill(Out begin, Out end, Type t) {
 template <class Out>
 Out fillInt(Out begin, Out end, int lim = 100) {
     while(begin != end) {
-        *begin++ = rand() % lim;
+        *begin++ = std::rand() % lim;
     }
     return begin;
 }
@@ -55,8 +52,21 @@ Out fillInt(Out begin, Out end, int lim = 100) {
 template <class Out>
 Out fillString(Out begin, Out end) {
     while(begin != end) {
-        *begin++ = "Default String";
+        *begin++ = "abcdefghi";
     }
+    return begin;
+}
+
+/**
+ * I/O for containers
+ */
+//Returns place where stopped reading into iterator
+template <class Out>
+Out read(Out begin, Out end, istream& in) {
+    while(begin != end) {
+        in >> *begin++;
+    }
+    in.clear();
     return begin;
 }
 
@@ -65,8 +75,8 @@ Out fillString(Out begin, Out end) {
  * toString function for all containers
  */
 template <class In>
-string toString(In begin, In end) {
-    stringstream ss;
+std::string toString(In begin, In end) {
+    std::stringstream ss;
     while(begin != end) {
         ss << *begin++ << " ";
     }
