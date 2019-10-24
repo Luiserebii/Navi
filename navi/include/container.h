@@ -1,3 +1,6 @@
+#ifndef GUARD_LUISEREBII_Navi_container_h
+#define GUARD_LUISEREBII_Navi_container_h
+
 #include <string>
 #include <sstream>
 #include <cstdlib>
@@ -93,3 +96,5 @@ std::string toString(In begin, In end, std::string div = " ") {
 }
 
 }
+
+#endif
