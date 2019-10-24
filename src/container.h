@@ -63,22 +63,30 @@ Out fillString(Out begin, Out end) {
 //Returns place where stopped reading into iterator
 template <class Out>
 Out read(Out begin, Out end, istream& in) {
-    while(begin != end) {
-        in >> *begin++;
+    while(begin != end && in >> *begin++) {
+        //in >> *begin++;
     }
     in.clear();
     return begin;
 }
 
+template <class In>
+In write(In begin, In end, ostream& out, string div = " ") {
+    while(begin != end) {
+        out << *begin++ << div;
+    }
+    out << endl;
+    return begin;
+}
 
 /**
  * toString function for all containers
  */
 template <class In>
-std::string toString(In begin, In end) {
+std::string toString(In begin, In end, string div = " ") {
     std::stringstream ss;
     while(begin != end) {
-        ss << *begin++ << " ";
+        ss << *begin++ << div;
     }
     ss << endl;
     return ss.str();
