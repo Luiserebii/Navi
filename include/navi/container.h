@@ -8,7 +8,7 @@
 
 namespace Navi {
 
-enum class Type { INT, STRING }
+enum class Type { INT, STRING };
 
 /**
  * In the spirit of std::accumulate using type-hinting via
