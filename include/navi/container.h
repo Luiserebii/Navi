@@ -102,6 +102,19 @@ In write(In begin, In end, std::ostream& out, std::string div = " ") {
     return begin;
 }
 
+//Vector-specific:
+template <class T>
+std::istream& read(std::vector<T>&v, std::istream& in) {
+    T element;
+    while(in >> element) {
+        v.push_back(element);
+    }
+
+    //Clear any flags/errors post-EOF/other error
+    in.clear();
+    return in;
+}
+
 /**
  * toString function for all containers
  */
