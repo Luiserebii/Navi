@@ -3,21 +3,9 @@
 
 A collection of convenience functions to make sparse bits of development and testing easier. Much like a certain fairy, Navi is intended to make quick things simple. Still in development, and untested. Not necessarily for use in production code.
 
-## Building
+## Including
 
-Building is fairly straightforward:
-```bash
-#!/bin/bash
-
-if [ ! -d build ]; then
-    mkdir build
-fi
-
-cd build
-cmake ..
-make
-```
-`BUILD` in the root directory also contains this script.
+A `CMakeLists.txt` file has been added for simple linking with CMake. For more on this, check the `examples/` directory.
 
 ## Usage
 Using Navi should be fairly simple. A quick example:
