@@ -8,7 +8,8 @@
 
 namespace Navi {
 
-enum class Type { INT, STRING };
+//Not using anymore due to errors with previous fill() function
+//enum class Type { INT, STRING };
 
 /**
  * In the spirit of std::accumulate using type-hinting via
@@ -51,16 +52,33 @@ Out fillString(Out begin, Out end) {
     return begin;
 }
 
+/**
+ * The new generic fill() is simply overloaded with
+ * type hinting; the third param does nothing but
+ * aim at a particular function to call
+ */
+
+template <class Out>
+Out fill(Out begin, Out end, int n) {
+    return fillInt(begin, end);
+}
+
+template <class Out>
+Out fill(Out begin, Out end, std::string s) {
+    return fillString(begin, end);
+}
+
+//Due to errors, we are no longer using this
+/*
 template <class Out>
 Out fill(Out begin, Out end, Type t) {
     if(t == Type::INT) {
-        std::cout << "WE ARE DOING MEME" << std::endl;
         return fillInt(begin, end);
     } else if(t == Type::STRING) {
-        std::cout << "WRONG" << std::endl;
         return fillString(begin, end);
     }
 }
+*/
 
 /**
  * I/O for containers
