@@ -21,7 +21,7 @@ enum class Type { INT, STRING };
  * Ahhhh! An alternate solution could be to have a user pass
  * a function in, maybe... let's keep it simple
  */
-template <class Out> 
+template <class Out, class T> 
 Out fill(Out begin, Out end, T val) {
     while(begin != end) {
         *begin++ = val;
@@ -36,15 +36,6 @@ Out fill(Out begin, Out end, T val) {
  * fill(v.begin(), v.end(), Navi::INT)
  */
 template <class Out>
-Out fill(Out begin, Out end, Type t) {
-    if(t == Type::INT) {
-        return fillInt(begin, end);
-    } else if(t == Type::STRING) {
-        return fillString(begin, end);
-    }
-}
-
-template <class Out>
 Out fillInt(Out begin, Out end, int lim = 100) {
     while(begin != end) {
         *begin++ = std::rand() % lim;
@@ -58,6 +49,15 @@ Out fillString(Out begin, Out end) {
         *begin++ = "abcdefghi";
     }
     return begin;
+}
+
+template <class Out>
+Out fill(Out begin, Out end, Type t) {
+    if(t == Type::INT) {
+        return fillInt(begin, end);
+    } else if(t == Type::STRING) {
+        return fillString(begin, end);
+    }
 }
 
 /**
@@ -78,7 +78,7 @@ In write(In begin, In end, std::ostream& out, std::string div = " ") {
     while(begin != end) {
         out << *begin++ << div;
     }
-    out << endl;
+    out << std::endl;
     return begin;
 }
 
@@ -91,7 +91,7 @@ std::string toString(In begin, In end, std::string div = " ") {
     while(begin != end) {
         ss << *begin++ << div;
     }
-    ss << endl;
+    ss << std::endl;
     return ss.str();
 }
 
