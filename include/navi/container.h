@@ -54,8 +54,10 @@ Out fillString(Out begin, Out end) {
 template <class Out>
 Out fill(Out begin, Out end, Type t) {
     if(t == Type::INT) {
+        std::cout << "WE ARE DOING MEME" << std::endl;
         return fillInt(begin, end);
     } else if(t == Type::STRING) {
+        std::cout << "WRONG" << std::endl;
         return fillString(begin, end);
     }
 }
