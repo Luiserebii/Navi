@@ -3,7 +3,7 @@
 
 A collection of convenience functions to make sparse bits of development and testing easier. Much like a certain fairy, Navi is intended to make quick things simple. Still in development, and untested. Not necessarily for use in production code.
 
-## Including
+## Installation
 
 A `CMakeLists.txt` file has been added for simple linking with CMake. For more on this, check the [`examples/`](examples) directory.
 
