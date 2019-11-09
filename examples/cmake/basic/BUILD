@@ -12,3 +12,6 @@ cmake ..
 
 # Make
 make
+
+# Run
+./basic
