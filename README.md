@@ -17,24 +17,25 @@ cd build
 cmake ..
 make
 ```
-which should make `libnavi.so` available to you within the `build` folder. `BUILD` in the root directory also contains this script.
+`BUILD` in the root directory also contains this script.
 
 ## Usage
 Using Navi should be fairly simple. A quick example:
 ```cpp
 #include <iostream>
 #include <vector>
-#include "navi/include/container.h"
+#include <navi/container.h>
 
 using std::cout;
 using std::vector;
 
 int main() {
 
-    vector<int> v;
+    //Initialize vector with 10 elements
+    vector<int> v(10);
 
-    //Fill a vector with random integers
-    Navi::fill(v.begin(), v.end(), Navi::Type::INT);
+    //Fill a vector with random integers (type-hint by passing an integer in the third parameter)
+    Navi::fill(v.begin(), v.end(), 0);
 
     //Print the vector to console
     Navi::write(v.begin(), v.end(), cout);
