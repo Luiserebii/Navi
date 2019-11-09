@@ -5,7 +5,7 @@ A collection of convenience functions to make sparse bits of development and tes
 
 ## Including
 
-A `CMakeLists.txt` file has been added for simple linking with CMake. For more on this, check the `examples/` directory.
+A `CMakeLists.txt` file has been added for simple linking with CMake. For more on this, check the [`examples/`](examples) directory.
 
 ## Usage
 Using Navi should be fairly simple. A quick example:
